@@ -1,0 +1,26 @@
+45-MINUTE AI / MARKDOWN / GITHUB DEMONSTRATION
+
+Use the accompanying Teacher-Demonstration-Guide.pdf or .docx.
+Set up the repository and both accounts BEFORE class (guide page 2).
+Students watch; no volunteer accounts or pull requests are needed.
+
+During class:
+1. Paste research-prompt.txt into your usual AI tool.
+2. Copy lesson-start.md into the GitHub file named README.md.
+3. Upload ai-and-ml.png to the same repository, beside README.md.
+4. Add this line below the heading "## AI and ML":
+   ![Diagram showing machine learning within AI](ai-and-ml.png)
+5. Switch to account B. Insert second-account-addition.md before
+   "## Sources" in README.md. Save directly to main.
+6. Refresh in account A and show the file history.
+
+lesson-finished.md is the completed reference and emergency fallback.
+Do not upload these teaching-pack filenames as separate lesson files.
+The demonstration repository ends with only README.md and ai-and-ml.png.
+
+The included image is an original teaching diagram. You may reuse it
+for this demonstration. Its labels summarize the AI/ML relationship;
+it is not a complete taxonomy of AI.
+
+Live-Demo-Guide.md is an editable text copy of the teacher guide.
+The [[PAGE]] markers in that copy indicate page breaks in the PDF.

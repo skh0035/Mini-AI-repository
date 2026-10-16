@@ -1,0 +1,11 @@
+Help me research a tiny lesson called "Introduction to AI" for
+first-year university students with no technical background.
+
+In no more than 150 words:
+1. Explain AI and machine learning in simple language.
+2. Explain how they are related.
+3. Give an email spam-filter example and one possible mistake.
+
+Find two reliable educational sources and give their links.
+Say if you cannot browse or verify a source. Do not invent links.
+This is a starting draft that I will check before using.
