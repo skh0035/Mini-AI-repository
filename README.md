@@ -10,7 +10,7 @@
 | Nabizadehshahrbabak Arsalan | 1820262239 | [@ArsalanVayu](https://github.com/ArsalanVayu) | Quality lead |
 | Kenzhebolat Anel | 1820262244 | [@anlinavie](https://github.com/anlinavie) | Visual Design lead & Video lead |
 | Mukhtarov Mukhammadshakhruz | 1820262290 | [@llex-27](https://github.com/llex-27) | Visual Design lead |
-| Bakatov Madi | 1820262172 | [@](https://github.com/) | Video lead |
+| Bakatov Madi | 1820262172 | [@madi67-rgb](https://github.com/madi67-rgb) | Video lead |
 | Egemberdiyeva Aliya | 1820262210 | [@All886](https://github.com/All886) | Content lead |
 
 ## 🎯 Project Purpose and Intended Learners
