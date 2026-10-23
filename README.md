@@ -6,7 +6,7 @@
 | Name | Student ID | GitHub Username | Primary Role |
 | :--- | :--- | :--- | :--- |
 | Afandiyeva Hayat | 1820262286 | [@afandiyevahayat](https://github.com/afandiyevahayat) | CEO |
-| Khaydarov Sarvarbek | 1820262286 | [@skh0035](https://github.com/skh0035) | CIO |
+| Khaydarov Sarvarbek | 1820262026 | [@skh0035](https://github.com/skh0035) | CIO |
 | Nabizadehshahrbabak Arsalan | 1820262239 | [@ArsalanVayu](https://github.com/ArsalanVayu) | Quality lead |
 | Kenzhebolat Anel | 1820262244 | [@anlinavie](https://github.com/anlinavie) | Visual Design lead & Video lead |
 | Mukhtarov Mukhammadshakhruz | 1820262290 | [@llex-27](https://github.com/llex-27) | Visual Design lead |
