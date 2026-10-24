@@ -1,10 +1,12 @@
 {
+  ".github/": "GitHub config and automation",
   "assets/": "Supporting images, diagrams, and media files",
   "content/": "The core shared Markdown learning content",
-  "content/module-outline.md": "Complete outline of topics and subtopics",
-  "content/topic-1.md": "[Fully Developed V1.0 Topic]",
-  "content/topic-2.md": "[Draft/Outline Status]",
+  "content/Module outline.md": "Complete outline of topics and subtopics",
+  "content/content.md": "Main learning content",
   "docs/": "Administrative documents",
-  "docs/ProjectPlan.pdf": "Stage 1 Project Plan and Task List",
+  "docs/project documents.md": "Project plan and task list",
+  "scripts/": "Automation scripts",
+  "scripts/update_readme_tree.py": "Regenerates this structure section",
   "README.md": "This file"
 }
