@@ -21,16 +21,18 @@
 *Where to find our content:*
 
 ```text
-├── 📁 assets/               # Supporting images, diagrams, and media files
-│   └── 🖼️ example-diagram.png
-├── 📁 content/              # The core shared Markdown learning content
-│   ├── 📄 module-outline.md # Complete outline of topics and subtopics
-│   ├── 📄 topic-1.md        # [Fully Developed V1.0 Topic]
-│   └── 📄 topic-2.md        # [Draft/Outline Status]
-├── 📁 docs/                 # Administrative documents
-│   ├── 📄 ProjectPlan.pdf   # Stage 1 Project Plan and Task List
-│   └── 📄 SubmissionReport.pdf 
-└── 📄 README.md             # This file
+├── assets
+│   ├── SilkMind_tem-logo.png
+│   ├── login-flowchart.png
+│   └── work.mp4
+├── content
+│   ├── Introduction_to_Software&Basic_Logic.md
+│   ├── Module outline.md
+│   └── content.md
+├── docs
+│   ├── SilkMind_ROUGH_Plan_updated.pdf
+│   └── project documents.md
+├── README.md
 ```
 
 ## 📋 Project Plan & Task List
