@@ -19,7 +19,7 @@
 
 ## 📂 Repository Structure
 *Where to find our content:*
-
+<!-- TREE:START -->
 ```text
 ├── 📁 assets/               # Supporting images, diagrams, and media files
 │   └── 🖼️ example-diagram.png
@@ -33,6 +33,7 @@
 └── 📄 README.md             # This file
 ```
 
+<!-- TREE:END -->
 ## 📋 Project Plan & Task List
 # *Workflow & Coordination Plan*
 
