@@ -4,14 +4,23 @@ on:
     branches: [main]
     paths-ignore:
       - README.md
-permissions:
-  contents: write
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      - name: Get app token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+
       - run: python3 scripts/update_readme_tree.py
+
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
