@@ -1,0 +1,19 @@
+digraph G {
+  rankdir=TB; bgcolor="white"; pad=0.3; nodesep=0.6; ranksep=0.55;
+  node [fontname="Helvetica", fontsize=14, style="rounded,filled", shape=box, penwidth=1.6, margin="0.2,0.12"];
+  edge [fontname="Helvetica", fontsize=12, color="#444444", penwidth=1.4];
+  label=<<b>Figure 2.1  Parts of a rule-based (symbolic) AI system</b>>; labelloc=t; fontname="Helvetica"; fontsize=17; fontcolor="#1f3a5f";
+
+  user [label="User\n(gives starting facts, asks questions)", fillcolor="#e8eef7", color="#1f3a5f"];
+  kb [label="KNOWLEDGE BASE\nrules written by experts\n(same for every case)\n\nR1: IF has feathers THEN is a bird\nR3: IF is a bird AND cannot fly\n      AND swims THEN is a penguin\n…", fillcolor="#e6f2e6", color="#2e7d32"];
+  wm [label="WORKING MEMORY\nfacts about this case\n(changes every case)\n\nhas feathers, cannot fly, swims\n+ new facts the engine adds", fillcolor="#e6f2e6", color="#2e7d32"];
+  engine [label="INFERENCE ENGINE\nfinds rules whose IF part is true and fires them;\nrepeats until no rule adds a new fact", fillcolor="#fff4d6", color="#b07a1e"];
+  out [label="Conclusion + explanation\n\"is a penguin, because R1 then R3\"", fillcolor="#1f3a5f", fontcolor="white", color="#1f3a5f"];
+
+  {rank=same; kb; wm;}
+  user -> wm [label=" starting facts"];
+  kb -> engine [label=" reads rules"];
+  wm -> engine [label=" reads facts /\n adds new facts", dir=both];
+  engine -> out;
+  user -> kb [style=invis];
+}
