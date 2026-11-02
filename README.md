@@ -2,9 +2,9 @@
 
 # SilkMind: Software & Symbolic AI
 
-A beginner's learning module on **how software makes decisions and how rule-based (symbolic) AI reasons**. This repository holds the shared Markdown content that our Study Guide, PPT Slides and Video Tutorials are built from.
+A beginner's learning module on **how software makes decisions and how rule-based (symbolic) AI reasons**: where it succeeded, where it failed, and where it is used today. This repository holds the shared Markdown content that our **Study Guide and Test Bank**, **PPT Slides** and **Video Tutorials** are built from.
 
-**Current version:** Markdown Content V1.1 (31 October 2026). See [Current progress](#current-progress-and-remaining-work).
+**Current version:** Markdown Content **V2.0** (Stage 2), 3 November 2026  |  **Readable copy:** [`pdf/SilkMind_Learning_Content_V2.0.pdf`](pdf/SilkMind_Learning_Content_V2.0.pdf)
 
 ---
 
@@ -26,84 +26,103 @@ A beginner's learning module on **how software makes decisions and how rule-base
 
 ## Purpose and intended learners
 
-**Purpose.** To give complete beginners a clear, connected path from "how does a program decide anything?" to "how does a rule-based AI reason, where did it succeed and fail, and where is it used today?"
+**Purpose.** To give complete beginners a clear, connected path from "how does a program decide anything?" to "how does a rule-based AI reason, how is that different from machine learning, why did it rise and fall, and where is it used today?"
 
-**Intended learners.** First-year university students from any subject, with no prior programming, computer-science or AI background. Everyday computer use and basic comparisons (`<`, `>`) are the only prerequisites. See the [module outline](content/00-module-outline.md#1-who-this-module-is-for).
+**Intended learners.** First-year university students from any subject, with no programming, computer-science or AI background. Everyday computer use and basic comparisons (`<`, `>`) are the only prerequisites; see the [module outline](content/00-module-outline.md#1-who-this-module-is-for).
 
 ---
 
 ## Where to find things
 
-```text
-Mini-AI-repository/
-├── README.md                                   ← you are here
-├── content/                                    ← THE LEARNING CONTENT (read in this order)
-│   ├── 00-module-outline.md                    outcomes, sequence, status of every section, known gaps
-│   ├── 01-software-and-logic.md                Topic 1
-│   ├── 02-rules-and-inference.md               Topic 2 (fully developed topic)
-│   ├── 03-symbolic-ai-vs-machine-learning.md   Topic 3
-│   ├── 04-history-and-ai-winters.md            Topic 4
-│   └── 05-symbolic-ai-in-modern-software.md    Topic 5
-├── assets/                                     ← images used by the content
-│   ├── topic01-login-flowchart.png
-│   ├── topic02-expert-system-architecture.png
-│   ├── topic02-forward-chaining.png
-│   ├── topic03-rules-vs-learning.png
-│   ├── silkmind-logo.png
-│   └── diagram-sources/                        editable Graphviz (.dot) sources for the diagrams
-├── pdf/
-│   └── SilkMind_Learning_Content_V1.1.pdf          rendered, readable copy of all content (outline + Topics 1–5)
-├── examples/
-│   └── topic02_mini_rule_engine.py             optional runnable demo for Topic 2 (Python 3, no packages)
-└── docs/                                       ← project management (no personal logs)
-    ├── project-plan.md                         plan, task list, owners, deadlines
-    ├── project-plan-designed.pdf               designed version of the Stage 1 plan
-    ├── review-log.md                           peer-review records
-    ├── ai-use-log.md                           project-level record of AI assistance
-    └── changelog.md                            what changed between versions and why
-```
+*This block is generated automatically from the files in the repository (`scripts/update_readme_tree.py`, run on every pull request). Do not edit it by hand; add descriptions in `.github/tree-comments.json`.*
 
-All images use **relative paths** (e.g. `../assets/topic02-forward-chaining.png`), so the content renders correctly from a downloaded copy as well as on GitHub.
+<!-- TREE:START -->
+```text
+├── 📁 assets/                                        # Images used by the content
+│   ├── 📁 diagram-sources/                           # Editable sources for every diagram
+│   │   ├── 📄 topic02-expert-system-architecture.dot
+│   │   ├── 📄 topic02-forward-chaining.dot
+│   │   ├── 📄 topic03-rules-vs-learning.dot
+│   │   └── 📄 topic04_timeline.py
+│   ├── 🖼️ silkmind-logo.png                          # Team logo
+│   ├── 🖼️ topic01-login-flowchart.png                # Figure 1.1
+│   ├── 🖼️ topic02-expert-system-architecture.png     # Figure 2.1
+│   ├── 🖼️ topic02-forward-chaining.png               # Figure 2.2
+│   ├── 🖼️ topic03-rules-vs-learning.png              # Figure 3.1
+│   └── 🖼️ topic04-ai-timeline.png                    # Figure 4.1
+├── 📁 content/                                       # THE LEARNING CONTENT (read 00 → 06 in order)
+│   ├── 📄 00-module-outline.md                       # Module Outline: Software & Symbolic AI
+│   ├── 📄 01-software-and-logic.md                   # Topic 1: Introduction to Software and Basic Logic
+│   ├── 📄 02-rules-and-inference.md                  # Topic 2: Rules and Inference (core topic)
+│   ├── 📄 03-symbolic-ai-vs-machine-learning.md      # Topic 3: Symbolic AI vs Machine Learning
+│   ├── 📄 04-history-and-ai-winters.md               # Topic 4: History: The Rise, the AI Winters and the Lessons
+│   ├── 📄 05-symbolic-ai-in-modern-software.md       # Topic 5: Symbolic AI in Modern Software
+│   ├── 📄 06-test-bank.md                            # Module Test Bank
+│   └── 📄 glossary.md                                # Glossary
+├── 📁 docs/                                          # Project management (no personal logs)
+│   ├── 📄 ai-use-log.md                              # Project-level record of AI assistance
+│   ├── 📄 changelog.md                               # What changed in each version
+│   ├── 📄 project-plan-designed.pdf                  # Designed Stage 1 plan
+│   ├── 📄 project-plan.md                            # Plan, task list, owners, deadlines
+│   ├── 📄 resource-mapping.md                        # Markdown → Study Guide / slides / videos
+│   ├── 📄 review-log.md                              # Peer reviews, learner tests, production fixes
+│   └── 📄 revision-summary.md                        # Stage 1 → Stage 2 changes (for the report)
+├── 📁 examples/                                      # Optional runnable demos (Python 3, no packages)
+│   ├── 📄 topic02_mini_rule_engine.py                # Topic 2: forward chaining + explanations
+│   └── 📄 topic03_learn_a_rule.py                    # Topic 3: learning a threshold rule from data
+├── 📁 pdf/                                           # Rendered, readable copy of all content
+│   └── 📄 SilkMind_Learning_Content_V2.0.pdf         # Readable copy: outline, Topics 1–5, test bank, glossary
+├── 📁 scripts/                                       # Repository automation
+│   └── 📄 update_readme_tree.py                      # Regenerates the structure block in this README
+└── 📄 README.md                                      # You are here
+```
+<!-- TREE:END -->
+
+All images use **relative paths** (e.g. `../assets/topic02-forward-chaining.png`), so the content renders correctly in a downloaded copy as well as on GitHub.
 
 ---
 
-## Content status at a glance
+## Content status
 
-| Topic | File | Status |
+| File | What it covers | Status |
 |---|---|---|
-| Module outline | [`00-module-outline.md`](content/00-module-outline.md) | Drafted |
-| 1. Software and basic logic | [`01-software-and-logic.md`](content/01-software-and-logic.md) | Drafted (revised from V1.0) |
-| 2. Rules and inference ★ | [`02-rules-and-inference.md`](content/02-rules-and-inference.md) | Drafted: fully developed, awaiting review |
-| 3. Symbolic AI vs machine learning | [`03-symbolic-ai-vs-machine-learning.md`](content/03-symbolic-ai-vs-machine-learning.md) | Drafted |
-| 4. History and AI winters | [`04-history-and-ai-winters.md`](content/04-history-and-ai-winters.md) | Drafted (dates need second source) |
-| 5. Symbolic AI in modern software | [`05-symbolic-ai-in-modern-software.md`](content/05-symbolic-ai-in-modern-software.md) | Drafted (module quiz: outline only) |
+| [`00-module-outline.md`](content/00-module-outline.md) | Outcomes, sequence, status of every subtopic, known gaps | Drafted V2.0 |
+| [`01-software-and-logic.md`](content/01-software-and-logic.md) | Software, algorithms, Boolean conditions, IF–THEN rules | Drafted V2.0 |
+| [`02-rules-and-inference.md`](content/02-rules-and-inference.md) | Knowledge base, inference engine, forward/backward chaining, expert systems | Drafted V2.0 (core topic) |
+| [`03-symbolic-ai-vs-machine-learning.md`](content/03-symbolic-ai-vs-machine-learning.md) | Writing rules vs learning them from data; worked learning example | Drafted V2.0 |
+| [`04-history-and-ai-winters.md`](content/04-history-and-ai-winters.md) | Dartmouth to the second AI winter; why rule-only AI hit its limits | Drafted V2.0 |
+| [`05-symbolic-ai-in-modern-software.md`](content/05-symbolic-ai-in-modern-software.md) | Forms, decision tables, game AI, knowledge graphs, neuro-symbolic AI | Drafted V2.0 |
+| [`06-test-bank.md`](content/06-test-bank.md) | 25 questions mapped to all 7 learning outcomes, with answers | Drafted V2.0 |
+| [`glossary.md`](content/glossary.md) | One definition per term, used in every resource | Drafted V2.0 |
 
-Status labels: **Outline only → Drafted → Checked** (or **Needs revision**). A section becomes *Checked* only after a second member records a review in [`docs/review-log.md`](docs/review-log.md).
+**Status labels:** Outline only → Drafted → **Checked** (or Needs revision). A file becomes *Checked* only after a member who did not write it records a review in [`docs/review-log.md`](docs/review-log.md). Every topic has a worked example, a visual, activities with answers (including find-the-error and predict tasks) and a "common misunderstandings" section.
 
 ---
 
 ## Project plan and task list
 
-The full task list, with owners and deadlines, is in [`docs/project-plan.md`](docs/project-plan.md). A designed overview is in [`docs/project-plan-designed.pdf`](docs/project-plan-designed.pdf).
+The Stage 2 task list, with owners, reviewers and deadlines, is in [`docs/project-plan.md`](docs/project-plan.md). How each Markdown section feeds the Study Guide, slides and videos is in [`docs/resource-mapping.md`](docs/resource-mapping.md).
 
 **How we work on GitHub**
-- Each member works on a branch and opens a **pull request**; the Quality lead (or another member) reviews it before merging.
-- Commit messages say *what changed and why*, e.g. `Topic 2: fix activity answer for Part A (R5 should not fire)`.
-- Day-to-day coordination happens in our WeChat group; decisions that affect the content are recorded in pull-request comments or in `docs/review-log.md`.
+- Each member works on a branch and opens a **pull request**; another member reviews it before the Quality lead merges.
+- Commit messages say *what changed and why*, e.g. `Topic 4: correct Fifth Generation dates to 1982–1992 (IPSJ, Nature 1992)`.
+- Errors found while making slides or videos are fixed **here first**, then in every resource (see `docs/resource-mapping.md`).
 
 ---
 
 ## Current progress and remaining work
 
-**Done (as of 31 Oct 2026)**
-- Module outline covering all five topics, with learning outcomes, prerequisites, sequence rationale, status per subtopic and a list of known gaps.
-- Topic 2 fully developed: explanations, terminology, worked example with trace table, two diagrams, 4-part activity with answers, real-world examples, references, and a tested code demo.
-- Topic 1 revised (activity/answer mismatch fixed, terms defined at first use, self-check added).
-- Topics 3–5 drafted with explanations, examples, activities, answers and references.
+**Done (as of 3 Nov 2026)**
+- All five topics drafted at full depth: explanations, defined terms, worked examples, eight figures and tables, activities with checked answers, misconceptions, references.
+- Test bank (25 questions) and glossary; two runnable demos whose output matches every tracing answer.
+- Revision of Stage 1 problems: see [`docs/revision-summary.md`](docs/revision-summary.md).
+- Facts re-checked against second sources; one date error (Fifth Generation project) and one answer error (Topic 3 Activity A) found and corrected.
 
-**Remaining**
-1. Peer review of every topic, recorded in `docs/review-log.md`. Nothing is marked *Checked* yet.
-2. Confirm Topic 4 dates and Topic 2 XCON figures in a second source.
-3. Find sources for, or relabel, the general examples in Topic 5 §1.2.
-4. Module self-assessment quiz (Topic 5) and a designed timeline graphic (Topic 4).
-5. Convert Topic 2 into the first Study Guide chapter, slide set and video (Stage 2).
+**Remaining before the Stage 2 deadline (7 Nov)**
+1. Each author of record reviews, revises and commits their topic under their own account.
+2. Peer reviews and learner tests recorded in `docs/review-log.md`; then status → *Checked*.
+3. Second sources for the remaining single-source history facts (listed in `docs/review-log.md` §3).
+4. Study Guide, slides and videos built from this content; mapping updated with real slide numbers.
+5. Final PDF render, ZIP, and submission report.
+
+AI assistance is recorded in [`docs/ai-use-log.md`](docs/ai-use-log.md).
