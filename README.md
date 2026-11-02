@@ -1,77 +1,109 @@
-# Team SilkMind - Software & Symbolic AI
+<img src="assets/silkmind-logo.png" alt="SilkMind team logo" width="140">
 
-## 👥 Team Information
-**Module:** Software & Symbolic AI
+# SilkMind: Software & Symbolic AI
 
-| Name | Student ID | GitHub Username | Primary Role |
-| :--- | :--- | :--- | :--- |
-| Afandiyeva Hayat | 1820262286 | [@afandiyevahayat](https://github.com/afandiyevahayat) | CEO |
-| Khaydarov Sarvarbek | 1820262026 | [@skh0035](https://github.com/skh0035) | CIO |
-| Nabizadehshahrbabak Arsalan | 1820262239 | [@ArsalanVayu](https://github.com/ArsalanVayu) | Quality lead |
-| Kenzhebolat Anel | 1820262244 | [@anlinavie](https://github.com/anlinavie) | Visual Design lead & Video lead |
-| Mukhtarov Mukhammadshakhruz | 1820262290 | [@llex-27](https://github.com/llex-27) | Visual Design lead |
-| Bakatov Madi | 1820262172 | [@madi67-rgb](https://github.com/madi67-rgb) | Video lead |
-| Egemberdiyeva Aliya | 1820262210 | [@All886](https://github.com/All886) | Content lead |
+A beginner's learning module on **how software makes decisions and how rule-based (symbolic) AI reasons**. This repository holds the shared Markdown content that our Study Guide, PPT Slides and Video Tutorials are built from.
 
-## 🎯 Project Purpose and Intended Learners
-**Purpose:** This repository houses the foundational Markdown content that our team will use to create a comprehensive Study Guide, PPT Slides, and Video Tutorials for our selected CS/AI module. 
-**Intended Learners:** Our target audience consists of beginners—fellow students with a general academic background but no prior experience in computer science, programming, or artificial intelligence. 
+**Current version:** Markdown Content V1.1 (31 October 2026). See [Current progress](#current-progress-and-remaining-work).
 
-## 📂 Repository Structure
-*Where to find our content:*
+---
+
+## Team
+
+| Member | GitHub | Role |
+|---|---|---|
+| Afandiyeva Hayat | [@afandiyevahayat](https://github.com/afandiyevahayat) | Team lead (CEO) |
+| Khaydarov Sarvarbek | [@skh0035](https://github.com/skh0035) | Repository & information lead (CIO) |
+| Nabizadehshahrbabak Arsalan | [@ArsalanVayu](https://github.com/ArsalanVayu) | Quality lead (reviews and merges pull requests) |
+| Egemberdiyeva Aliya | [@All886](https://github.com/All886) | Content lead |
+| Kenzhebolat Anel | [@anlinavie](https://github.com/anlinavie) | Visual design & video lead |
+| Mukhtarov Mukhammadshakhruz | [@llex-27](https://github.com/llex-27) | Visual design lead |
+| Bakatov Madi | [@madi67-rgb](https://github.com/madi67-rgb) | Video lead |
+
+*Student ID numbers are kept in the private submission report, not in this public repository.*
+
+---
+
+## Purpose and intended learners
+
+**Purpose.** To give complete beginners a clear, connected path from "how does a program decide anything?" to "how does a rule-based AI reason, where did it succeed and fail, and where is it used today?"
+
+**Intended learners.** First-year university students from any subject, with no prior programming, computer-science or AI background. Everyday computer use and basic comparisons (`<`, `>`) are the only prerequisites. See the [module outline](content/00-module-outline.md#1-who-this-module-is-for).
+
+---
+
+## Where to find things
 
 ```text
-├── assets
-│   ├── SilkMind_tem-logo.png
-│   ├── login-flowchart.png
-│   └── work.mp4
-├── content
-│   ├── Introduction_to_Software&Basic_Logic.md
-│   ├── Module outline.md
-│   └── content.md
-├── docs
-│   ├── SilkMind_ROUGH_Plan_updated.pdf
-│   └── project documents.md
-├── README.md
+Mini-AI-repository/
+├── README.md                                   ← you are here
+├── content/                                    ← THE LEARNING CONTENT (read in this order)
+│   ├── 00-module-outline.md                    outcomes, sequence, status of every section, known gaps
+│   ├── 01-software-and-logic.md                Topic 1
+│   ├── 02-rules-and-inference.md               Topic 2 (fully developed topic)
+│   ├── 03-symbolic-ai-vs-machine-learning.md   Topic 3
+│   ├── 04-history-and-ai-winters.md            Topic 4
+│   └── 05-symbolic-ai-in-modern-software.md    Topic 5
+├── assets/                                     ← images used by the content
+│   ├── topic01-login-flowchart.png
+│   ├── topic02-expert-system-architecture.png
+│   ├── topic02-forward-chaining.png
+│   ├── topic03-rules-vs-learning.png
+│   ├── silkmind-logo.png
+│   └── diagram-sources/                        editable Graphviz (.dot) sources for the diagrams
+├── pdf/
+│   └── SilkMind_Learning_Content_V1.1.pdf          rendered, readable copy of all content (outline + Topics 1–5)
+├── examples/
+│   └── topic02_mini_rule_engine.py             optional runnable demo for Topic 2 (Python 3, no packages)
+└── docs/                                       ← project management (no personal logs)
+    ├── project-plan.md                         plan, task list, owners, deadlines
+    ├── project-plan-designed.pdf               designed version of the Stage 1 plan
+    ├── review-log.md                           peer-review records
+    ├── ai-use-log.md                           project-level record of AI assistance
+    └── changelog.md                            what changed between versions and why
 ```
 
-## 📋 Project Plan & Task List
-# *Workflow & Coordination Plan*
+All images use **relative paths** (e.g. `../assets/topic02-forward-chaining.png`), so the content renders correctly from a downloaded copy as well as on GitHub.
 
-## *Content Development*
-* **Phase 1:** Deep research and vetting of reliable sources.
-* **Phase 2:** Drafting content and scripting.
-* **Phase 3:** Peer review and critical inspection of information before media production begins.
+---
 
-## *GitHub Usage*
-* Central repository for Markdown files and project tracking.
-* Utilize **GitHub Projects (Kanban)** to track task progress.
-* Manage version control through structured commits and pull requests.
+## Content status at a glance
 
-## *Communication*
-* **WeChat Group:** Daily updates, quick questions, and deadline reminders.
-* **Meetings:** Daily stand-ups for quick progress checks and weekly meetings for in-depth brainstorming.
-* **Real-time Collaboration:** Google Drive for live document editing.
+| Topic | File | Status |
+|---|---|---|
+| Module outline | [`00-module-outline.md`](content/00-module-outline.md) | Drafted |
+| 1. Software and basic logic | [`01-software-and-logic.md`](content/01-software-and-logic.md) | Drafted (revised from V1.0) |
+| 2. Rules and inference ★ | [`02-rules-and-inference.md`](content/02-rules-and-inference.md) | Drafted: fully developed, awaiting review |
+| 3. Symbolic AI vs machine learning | [`03-symbolic-ai-vs-machine-learning.md`](content/03-symbolic-ai-vs-machine-learning.md) | Drafted |
+| 4. History and AI winters | [`04-history-and-ai-winters.md`](content/04-history-and-ai-winters.md) | Drafted (dates need second source) |
+| 5. Symbolic AI in modern software | [`05-symbolic-ai-in-modern-software.md`](content/05-symbolic-ai-in-modern-software.md) | Drafted (module quiz: outline only) |
 
-## *Quality Assurance*
-* **Peer Review:** Strict peer-review system to inspect every deliverable immediately upon completion.
-* **Quality Lead Checklist:** Standardized checklist used to evaluate accuracy, design consistency, and interactivity.
+Status labels: **Outline only → Drafted → Checked** (or **Needs revision**). A section becomes *Checked* only after a second member records a review in [`docs/review-log.md`](docs/review-log.md).
 
-## *Risk Management*
-* **Mid-deadline Reviews:** Enforced to catch potential delays early.
-* **Contingency Meetings:** Quick reassignment of tasks or support if a team member falls behind.
-* **Data Protection:** Regular backups scheduled for all project files.
+---
 
-## 🚀 Current Progress and Remaining Work
-## Current Progress
+## Project plan and task list
 
-* **Team Setup:** Roles established and tasks formally assigned across the team.
-* **Strategy & Goals:** Target audience and learning goals finalized.
-* **Content & Workflow:** Outlined four primary sections of content strategy and mapped overall workflow.
+The full task list, with owners and deadlines, is in [`docs/project-plan.md`](docs/project-plan.md). A designed overview is in [`docs/project-plan-designed.pdf`](docs/project-plan-designed.pdf).
 
-## Remaining Work & Timeline
+**How we work on GitHub**
+- Each member works on a branch and opens a **pull request**; the Quality lead (or another member) reviews it before merging.
+- Commit messages say *what changed and why*, e.g. `Topic 2: fix activity answer for Part A (R5 should not fire)`.
+- Day-to-day coordination happens in our WeChat group; decisions that affect the content are recorded in pull-request comments or in `docs/review-log.md`.
 
-* **Week 1:** Complete initial research document.
-* **Week 2:** Draft foundational Markdown content and Study Guide.
-* **Week 3:** Create presentation slides, visual assets, and interactive video resources.
-* **Finalization:** Review and finalize the GitHub repository.
+---
+
+## Current progress and remaining work
+
+**Done (as of 31 Oct 2026)**
+- Module outline covering all five topics, with learning outcomes, prerequisites, sequence rationale, status per subtopic and a list of known gaps.
+- Topic 2 fully developed: explanations, terminology, worked example with trace table, two diagrams, 4-part activity with answers, real-world examples, references, and a tested code demo.
+- Topic 1 revised (activity/answer mismatch fixed, terms defined at first use, self-check added).
+- Topics 3–5 drafted with explanations, examples, activities, answers and references.
+
+**Remaining**
+1. Peer review of every topic, recorded in `docs/review-log.md`. Nothing is marked *Checked* yet.
+2. Confirm Topic 4 dates and Topic 2 XCON figures in a second source.
+3. Find sources for, or relabel, the general examples in Topic 5 §1.2.
+4. Module self-assessment quiz (Topic 5) and a designed timeline graphic (Topic 4).
+5. Convert Topic 2 into the first Study Guide chapter, slide set and video (Stage 2).
