@@ -16,8 +16,8 @@ A beginner's learning module on **how software makes decisions and how rule-base
 | Khaydarov Sarvarbek | [@skh0035](https://github.com/skh0035) | Repository & information lead (CIO) |
 | Nabizadehshahrbabak Arsalan | [@ArsalanVayu](https://github.com/ArsalanVayu) | Quality lead (reviews and merges pull requests) |
 | Egemberdiyeva Aliya | [@All886](https://github.com/All886) | Content lead |
-| Kenzhebolat Anel | [@anlinavie](https://github.com/anlinavie) | Visual design & video lead |
-| Mukhtarov Mukhammadshakhruz | [@llex-27](https://github.com/llex-27) | Visual design lead |
+| Kenzhebolat Anel | [@anlinavie](https://github.com/anlinavie) | Visual design|
+| Mukhtarov Mukhammadshakhruz | [@llex-27](https://github.com/llex-27) | Visual design & Video lead |
 | Bakatov Madi | [@madi67-rgb](https://github.com/madi67-rgb) | Video lead |
 
 *Student ID numbers are kept in the private submission report, not in this public repository.*
