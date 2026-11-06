@@ -1,11 +1,11 @@
-# Topic 2: Rules and Inference: How a Symbolic AI Reasons
+# Topic 2: Rules and Inference: How a symbolic AI Reasons
 
-**Level:** Beginner  |  **Estimated time:** 45 minutes  |  **Status:** Drafted (fully developed topic; awaiting team review)
+**Level:** Beginner  |  **Estimated time:** 55 minutes  |  **Status:** Drafted V2.0 (fully developed topic; awaiting peer review)
 **Builds on:** [Topic 1: Software and Basic Logic](01-software-and-logic.md)  |  **Comes before:** [Topic 3: Symbolic AI vs Machine Learning](03-symbolic-ai-vs-machine-learning.md)
 
 **Learning objectives.** After this topic you will be able to:
 
-1. Explain what "symbolic" means in Symbolic AI.
+1. Explain what "symbolic" means in symbolic AI.
 2. Name and describe the parts of a rule-based AI system: facts, rules, knowledge base, working memory and inference engine.
 3. Trace **forward chaining** by hand, cycle by cycle, and say when it stops.
 4. Explain how the system can answer "why?" by showing the rules it used.
@@ -21,7 +21,7 @@ In Topic 1 a program made **one** decision with **one** rule:
 IF T < 18 THEN heater = ON ELSE heater = OFF
 ```
 
-Now imagine a doctor's knowledge about blood infections, written down as **hundreds** of rules like this. A program that stores those rules and applies them automatically to a new patient can give advice that sounds like an expert's. That is the idea behind **Symbolic AI** and its best-known product, the **expert system**.
+Now imagine a doctor's knowledge about blood infections, written down as **hundreds** of rules like this. A program that stores those rules and applies them automatically to a new patient can give advice that sounds like an expert's. That is the idea behind **symbolic AI** and its best-known product, the **expert system**.
 
 > **Expert system:** a computer program that uses AI methods to solve problems in one specialised area, the kind of problem that normally needs a human expert ([Britannica: Expert system](https://www.britannica.com/technology/expert-system)).
 
@@ -33,7 +33,7 @@ Now imagine a doctor's knowledge about blood infections, written down as **hundr
 
 Symbolic AI represents knowledge as symbols that humans can read, and reasons by combining those symbols with rules.
 
-One important point: **the computer does not know what the symbols mean.** To the program, `has feathers` is just a string of characters. It does not know that feathers are soft or that birds have them. All the "meaning" comes from the rules people write. For example, the program does not know that `cannot fly` is the opposite of `can fly` unless a rule says so. Keep this in mind; it explains many of the limits in Section 7.
+One important point: **the computer does not know what the symbols mean.** To the program, `has feathers` is just a string of characters. It does not know that feathers are soft or that birds have them. All the "meaning" comes from the rules people write. For example, the program does not know that `cannot fly` is the opposite of `can fly` unless a rule says so. Keep this in mind; it explains many of the limits in Section 8.
 
 ---
 
@@ -124,7 +124,7 @@ Why "is a penguin"?   Because R3: is a bird AND cannot fly AND swims.
   "has feathers", "cannot fly", "swims" were given by the user.
 ```
 
-This is one of the biggest strengths of Symbolic AI. Britannica notes that expert systems can show the sequence of rules behind a conclusion, which helps users judge whether to trust it ([Britannica: Expert system](https://www.britannica.com/technology/expert-system)). The MYCIN medical system, for example, could explain its reasoning on request ([Britannica: Expert systems](https://www.britannica.com/technology/artificial-intelligence/Expert-systems)).
+This is one of the biggest strengths of symbolic AI. Britannica notes that expert systems can show the sequence of rules behind a conclusion, which helps users judge whether to trust it ([Britannica: Expert system](https://www.britannica.com/technology/expert-system)). The MYCIN medical system, for example, could explain its reasoning on request ([Britannica: Expert systems](https://www.britannica.com/technology/artificial-intelligence/Expert-systems)).
 
 ### 4.5 The same idea the other way round: backward chaining
 
@@ -179,6 +179,17 @@ Use the knowledge base in Section 4.1 (R1–R6) and the same strategy: in each c
 
 **Part D: find the gap.** A user enters `has feathers` and `can fly`. What does the system conclude? Is that a mistake by the computer, or a limit of the knowledge base? Explain in one or two sentences.
 
+**Part E: find the error in a trace.** A classmate traced the starting facts `gives milk`, `has black stripes`, `eats meat` like this:
+
+| Cycle | Rule fired | New fact |
+|---|---|---|
+| 1 | R5 | is a tiger |
+| 2 | none | stop |
+
+The final answer (tiger) happens to be right, but the trace is wrong. Explain the mistake and write the correct trace.
+
+**Part F: predict the outcome.** Before tracing, predict what the system will conclude from `gives milk`, `eats meat`, `has hooves`, `has black stripes`. Then trace it. What does the result reveal about the knowledge base, and how could you fix it?
+
 ---
 
 ## 6. Expected outcomes and answers
@@ -216,23 +227,60 @@ The system asks only about facts that matter for the goal. It would never ask ab
 
 Cycle 1: R1 fires → `is a bird`. Cycle 2: no rule adds anything new → stop. The system concludes only **"is a bird"**, not which bird. R4 (owl) needs `hunts at night` as well, and no rule covers other flying birds.
 
-This is **not** a computer error. The engine did exactly what the rules say. It is a **gap in the knowledge base**: the system knows only what its rules cover. This is the main weakness of rule-based systems, explored in Section 7 and in Topic 4.
+This is **not** a computer error. The engine did exactly what the rules say. It is a **gap in the knowledge base**: the system knows only what its rules cover. This is the main weakness of rule-based systems, explored in Section 8 and in Topic 4.
+
+### Part E
+
+R5 cannot fire in cycle 1, because one of its conditions, `is a mammal`, is **not yet in working memory**. It is only added when R2 fires. The correct trace is:
+
+| Cycle | Rule fired | New fact |
+|---|---|---|
+| 1 | **R2** (gives milk) | is a mammal |
+| 2 | **R5** (is a mammal AND eats meat AND has black stripes) | is a tiger |
+| 3 | none | stop |
+
+A correct-looking final answer does not prove the reasoning was correct. The order of firing matters because new facts only become available in the *next* cycle.
+
+### Part F
+
+| Cycle | Rule fired | New fact |
+|---|---|---|
+| 1 | R2 | is a mammal |
+| 2 | R5 | is a tiger |
+| 3 | R6 | is a zebra |
+| 4 | none | stop |
+
+The system concludes that the animal is **both a tiger and a zebra**. The engine did nothing wrong; the **knowledge base** allows two contradictory conclusions because R5 and R6 overlap (both accept a striped mammal). This is called a **rule conflict**. Possible fixes: add a condition to R5 such as `does not have hooves`, or add a rule that rejects the case as impossible ("carnivores with hooves are not in this knowledge base"). Either fix must then be re-tested against Parts A and E.
+
+*Both answers were checked by running the example program with these starting facts.*
 
 ### Common mistakes
 
 1. Firing a rule when only *some* of its AND conditions are true (e.g. firing R5 in Part A).
 2. Firing the same rule again and again. A rule that adds nothing new does not count.
-3. Forgetting that new facts (like `is a mammal`) can make other rules true in the *next* cycle.
+3. Forgetting that new facts (like `is a mammal`) can make other rules true in the *next* cycle (Part E).
 
 ---
 
-## 7. Real expert systems, and their limits
+## 7. Common misunderstandings
+
+| Misunderstanding | What is actually true |
+|---|---|
+| "The expert system understands animals." | It matches symbols. It would draw the same conclusions if every word were replaced by a code like `X17` (Section 2). |
+| "If the answer is right, the reasoning is right." | Part E reached the right answer with an impossible trace. Explanations (Section 4.4) let us check the reasoning, not just the answer. |
+| "If the system gives a wrong or strange answer, the inference engine has a bug." | Usually the engine is fine and the **knowledge base** is incomplete (Part D) or conflicting (Part F). |
+| "Forward and backward chaining give different answers." | With the same rules and facts they reach the same conclusions; they differ in **direction** and in **which questions they ask** (Section 4.5). |
+| "More rules always make the system better." | Each new rule can conflict with existing ones (Part B warning, Part F), so every addition must be re-tested. |
+
+---
+
+## 8. Real expert systems, and their limits
 
 | System | When / where | What it did | Source |
 |---|---|---|---|
 | **DENDRAL** | From 1965, Stanford University (Feigenbaum and Lederberg) | Suggested the molecular structure of chemical compounds from spectrograph data; often called the first expert system | [Britannica: Expert systems](https://www.britannica.com/technology/artificial-intelligence/Expert-systems) |
 | **MYCIN** | From 1972, Stanford University | Diagnosed blood infections and recommended treatment using about 500 rules; could explain its reasoning; performed about as well as specialists and better than general practitioners | [Britannica: Expert systems](https://www.britannica.com/technology/artificial-intelligence/Expert-systems) |
-| **XCON (R1)** | Built 1978 by John McDermott (Carnegie Mellon) for Digital Equipment Corporation; in use from 1980 | Chose the components for customers' computer orders; grew to about 2,500 rules; estimated to save the company about $25 million a year | [Wikipedia: XCON](https://en.wikipedia.org/wiki/Xcon) |
+| **XCON (R1)** | Developed by John McDermott (Carnegie Mellon University) for Digital Equipment Corporation (DEC); used in DEC's manufacturing from January 1980 | Checked customers' computer orders and chose the parts needed to make each system complete; by 1986 it was estimated to save DEC about $25 million a year. It grew to thousands of rules (about 2,500 by one account) | McDermott (1981, 1982); [Middlesex University notes](https://cwa.mdx.ac.uk/bis2040/lect6ES2/xCon.html); [Wikipedia: XCON](https://en.wikipedia.org/wiki/Xcon) |
 
 **Strengths**
 - **Explainable:** every conclusion can be traced to named rules (Section 4.4).
@@ -247,9 +295,12 @@ This is **not** a computer error. The engine did exactly what the rules say. It 
 
 These limits are a large part of why interest in rule-only AI collapsed in the late 1980s (Topic 4), and why most modern AI learns from data instead (Topic 3).
 
+> **Optional extension: uncertain rules** *(not required for the activities or the test bank)*
+> Real expert knowledge is rarely 100% certain. A doctor's rule is more like "IF these symptoms THEN *probably* this infection". Real systems therefore attached a confidence or probability value to rules ([Britannica: Expert system](https://www.britannica.com/technology/expert-system)), and the engine combined these values as it chained. This module keeps every fact strictly true or false, as in Topic 1, so that the reasoning can be traced by hand.
+
 ---
 
-## 8. Check your understanding
+## 9. Check your understanding
 
 1. Which part of an expert system changes for every new case: the knowledge base or working memory?
 2. In forward chaining, when does the inference engine stop?
@@ -266,7 +317,7 @@ These limits are a large part of why interest in rule-only AI collapsed in the l
 
 ---
 
-## 9. Summary
+## 10. Summary
 
 - **Symbolic AI** stores knowledge as human-readable **symbols** and **IF–THEN rules**. The computer does not understand the symbols; all meaning comes from the rules.
 - A rule-based system has a **knowledge base** (rules), **working memory** (facts for this case) and an **inference engine** (the loop that fires rules).
@@ -275,18 +326,21 @@ These limits are a large part of why interest in rule-only AI collapsed in the l
 
 ---
 
-## 10. References
+## 11. References
 
-Links accessed 31 October 2026.
+Links accessed 31 October 2026; XCON sources added 3 November 2026.
 
 1. Encyclopaedia Britannica. *Expert system.* https://www.britannica.com/technology/expert-system
 2. Encyclopaedia Britannica. *Artificial intelligence: Expert systems* (sections on knowledge base and inference engine, DENDRAL, MYCIN, and limitations). https://www.britannica.com/technology/artificial-intelligence/Expert-systems
 3. Wikipedia. *Forward chaining* (definition; data-driven vs goal-driven; frog example). https://en.wikipedia.org/wiki/Forward_chaining
-4. Wikipedia. *Xcon* (R1/XCON development, rule count, reported savings). https://en.wikipedia.org/wiki/Xcon
+4. McDermott, J. (1981). R1: The formative years. *AI Magazine*, 2(2). (Confirms use at DEC since January 1980.) https://aitopics.org/doc/journals:E2B8C719
+5. McDermott, J. (1982). R1: A rule-based configurer of computer systems. *Artificial Intelligence*, 19(1), 39–88. https://doi.org/10.1016/0004-3702(82)90021-2
+6. Huyck, C. *Configuration with R1/XCon.* BIS2040 course notes, Middlesex University. (Reports the estimated $25M/year saving by 1986.) https://cwa.mdx.ac.uk/bis2040/lect6ES2/xCon.html
+7. Wikipedia. *Xcon* (rule count). https://en.wikipedia.org/wiki/Xcon
 
 **Further reading (not used for specific claims):**
 
 - Microsoft. *AI for Beginners, Lesson 2: Knowledge Representation and Expert Systems.* https://github.com/microsoft/AI-For-Beginners/blob/main/lessons/2-Symbolic/README.md
 - Russell, S. and Norvig, P. (2021). *Artificial Intelligence: A Modern Approach* (4th ed.), Pearson. Chapters on logical agents and inference. *(Standard university textbook; team to confirm chapter numbers from the library copy.)*
 
-**Note on sources:** Wikipedia is used only for the general definition of forward/backward chaining and for XCON figures, which are not covered in Britannica. Reviewers should confirm the XCON figures against a second source (see `docs/review-log.md`).
+**Note on sources:** Wikipedia is used only for the general definition of forward/backward chaining and for XCON's rule count. In V2.0 the XCON deployment date and savings were confirmed in a second source (refs 4 and 6); the figure of about 2,500 rules is still supported only by Wikipedia, so the text says "by one account". The animal-identifier rules and all activity data are the team's own teaching material.
