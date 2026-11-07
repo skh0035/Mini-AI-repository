@@ -1,5 +1,17 @@
 # Changelog
 
+## V2.0 (3 November 2026): Stage 2 content
+
+Full details with locations: [`revision-summary.md`](revision-summary.md).
+
+- Every topic now has a "Common misunderstandings" section and at least one find-the-error or predict activity.
+- New worked examples: learning a threshold rule from labelled data (Topic 3, with `examples/topic03_learn_a_rule.py`); tracing a game guard; following a knowledge graph (Topic 5).
+- New: `content/06-test-bank.md` (25 questions, LO-mapped), `content/glossary.md`, Topic 4 timeline graphic.
+- Corrected: Fifth Generation project dates (now 1982–1992); Topic 3 Activity A answer (three-way tie).
+- Sources strengthened: Lighthill report, IPSJ, *Nature* (1992), McDermott (1981, 1982), MDN, game-design lecture.
+- New docs: `resource-mapping.md`, `revision-summary.md`; Stage 2 `review-log.md` with review assignments and learner-test protocol.
+- README structure now updates automatically (GitHub Actions workflow).
+
 ## V1.1 (31 October 2026): revision after Stage 1 feedback (22/30)
 
 | Area | V1.0 problem | V1.1 change |
