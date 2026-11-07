@@ -1,6 +1,6 @@
 # Topic 1: Introduction to Software and Basic Logic
 
-**Level:** Beginner  |  **Estimated time:** 30 minutes  |  **Status:** Drafted (V1.0 content, revised 31 Oct 2026)
+**Level:** Beginner  |  **Estimated time:** 35 minutes  |  **Status:** Drafted V2.0 (awaiting peer review)
 **Comes before:** [Topic 2: Rules and Inference](02-rules-and-inference.md)
 
 **Learning objectives.** After this topic you will be able to:
@@ -14,7 +14,7 @@
 
 ## 1. Why start here?
 
-The rest of this module is about **Symbolic AI**: AI that works by following rules that people write down. To understand how such a system "thinks", you first need to understand how *any* program makes a decision. This topic gives you that foundation in about half an hour.
+The rest of this module is about **symbolic AI**: AI that works by following rules that people write down. To understand how such a system "thinks", you first need to understand how *any* program makes a decision. This topic gives you that foundation in about half an hour.
 
 ---
 
@@ -66,7 +66,7 @@ The question "is the password correct?" has only two possible answers: **true** 
 
 ### 2.4 Why this matters for AI
 
-The earliest approach to artificial intelligence, **Symbolic AI**, is built from exactly these pieces. Experts write their knowledge down as many IF–THEN rules, and a program applies those rules automatically ([Britannica: Expert systems](https://www.britannica.com/technology/artificial-intelligence/Expert-systems)). If you understand how one program makes one decision, you already understand the building block of a rule-based AI. Topic 2 shows how many rules are combined.
+The earliest approach to artificial intelligence, **symbolic AI**, is built from exactly these pieces. Experts write their knowledge down as many IF–THEN rules, and a program applies those rules automatically ([Britannica: Expert systems](https://www.britannica.com/technology/artificial-intelligence/Expert-systems)). If you understand how one program makes one decision, you already understand the building block of a rule-based AI. Topic 2 shows how many rules are combined.
 
 **Key idea:** Software = precise instructions. Many instructions are true/false decisions. Rule-based AI is built from the same kind of decisions.
 
@@ -136,7 +136,7 @@ ELSE
 
 ---
 
-## 5. Learner activity: a thermostat rule
+## 5. Learner activities: a thermostat rule and a faulty login rule
 
 **Scenario.** You are writing the software for a smart thermostat. It has a temperature sensor and can switch a heater ON or OFF.
 
@@ -149,6 +149,14 @@ ELSE
 **Task B (truth table).** Fill in the result column for three temperature readings: 15 °C, 18 °C and 21 °C.
 
 **Task C (stretch).** Change your rule so the heater turns on only if the temperature is below 18 °C **and** someone is at home. Which Boolean operator did you use? Write the truth table for the new condition.
+
+**Task D (find the error).** A student wrote this login rule:
+
+```text
+access_granted = (account_exists) OR (password_matches)
+```
+
+Using a truth table, find one situation where this rule lets the wrong person in. Then correct the rule.
 
 *Hints:* "below 18 °C" is a comparison, so it is either true or false for any reading. Decide what the heater should do when the condition is false. Write your answers before reading Section 6.
 
@@ -199,15 +207,38 @@ Operator: **AND**. Rule: `IF (T < 18) AND (someone_home) THEN heater = ON ELSE h
 | False | True | OFF |
 | False | False | OFF |
 
+### Task D: find the error
+
+| Account exists? | Password matches? | `account_exists OR password_matches` |
+|---|---|---|
+| True | True | True → granted ✔ |
+| **True** | **False** | **True → granted ✘** |
+| False | True\* | True → granted ✘ |
+| False | False | False → denied ✔ |
+
+The second row is the dangerous one: **anyone who types a real user's email address gets in with any password**, because OR needs only one part to be true. The correct rule uses **AND** (Section 3): `access_granted = (account_exists) AND (password_matches)`.
+
 ### Common mistakes to check for
 
 1. **Skipping the input step.** The program must read the temperature before it can compare it.
 2. **Writing a vague rule** such as "if it's cold, heat it". "Cold" is not a defined true/false condition.
 3. **Forgetting the ELSE.** Without it, nothing says what happens when the condition is false.
+4. **Mixing up AND and OR** (Task D). A quick truth table catches this every time.
 
 ---
 
-## 7. Check your understanding
+## 7. Common misunderstandings
+
+| Misunderstanding | What is actually true |
+|---|---|
+| "OR means *one or the other, but not both*." | In Boolean logic, OR is true when **at least one** part is true, *including* when both are (truth table, Section 2.3). Everyday English sometimes means "not both", but computers do not. |
+| "The computer understands what *password* means." | It only compares two pieces of stored data and gets true or false. All meaning comes from the people who wrote the rules. Topic 2 builds on this point. |
+| "Pseudocode is a programming language." | It is plain-language steps for planning an algorithm; it cannot be run. Real programs must follow a language's exact rules. |
+| "Software and the program are the same as the app icon on my screen." | The icon is just a shortcut. The software is the instructions behind it, stored in memory and run by the hardware. |
+
+---
+
+## 8. Check your understanding
 
 1. Is a phone's camera app hardware or software? What about the camera lens?
 2. Why is "turn the heater on if it's chilly" *not* a good instruction for a computer?
@@ -222,7 +253,7 @@ Operator: **AND**. Rule: `IF (T < 18) AND (someone_home) THEN heater = ON ELSE h
 
 ---
 
-## 8. Summary
+## 9. Summary
 
 - **Software** is the set of instructions; **hardware** is the physical machine.
 - An **algorithm** is a finite list of clear steps; a program is an algorithm a computer can run.
@@ -231,7 +262,7 @@ Operator: **AND**. Rule: `IF (T < 18) AND (someone_home) THEN heater = ON ELSE h
 
 ---
 
-## 9. References
+## 10. References
 
 All links accessed on 21 October 2026 and re-checked on 31 October 2026.
 
@@ -244,4 +275,6 @@ All links accessed on 21 October 2026 and re-checked on 31 October 2026.
 7. Temoshok, D., et al. (2025). *NIST Special Publication 800-63B-4, Digital Identity Guidelines: Authentication and Authenticator Management.* National Institute of Standards and Technology. https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63B-4.pdf
 8. OWASP Foundation. *Authentication Cheat Sheet.* https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html
 
-**Changes from V1.0 (for reviewers):** activity wording now matches the model answer (V1.0 asked for "3 rules" but answered with 3 steps); terms *condition*, *truth table* and *pseudocode* are now defined where they first appear; added a hardware/software table, a truth-table task and a self-check section; removed references that were listed but not used (Britannica Kids, Plus Maths, Stanford Python notes, Crash Course) and replaced a lecture-notes PDF and Wikipedia with Britannica's expert-systems article.
+**Changes in V2.0:** added Task D (find the error in an OR login rule) with answer, and Section 7 (common misunderstandings).
+
+**Changes from V1.0 to V1.1:** activity wording now matches the model answer (V1.0 asked for "3 rules" but answered with 3 steps); terms *condition*, *truth table* and *pseudocode* are now defined where they first appear; added a hardware/software table, a truth-table task and a self-check section; removed references that were listed but not used (Britannica Kids, Plus Maths, Stanford Python notes, Crash Course) and replaced a lecture-notes PDF and Wikipedia with Britannica's expert-systems article.

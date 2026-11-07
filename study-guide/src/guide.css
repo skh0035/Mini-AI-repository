@@ -1,0 +1,101 @@
+/* SilkMind Caravan Study Guide: shared identity (also used by slides/videos) */
+:root{
+  --navy:#1f3a5f; --navy2:#2c5282; --amber:#b07a1e; --amber-l:#fff4d6; --sand:#f6ecd7; --sand2:#ead9b4;
+  --green:#2e7d32; --green-l:#e6f2e6; --red:#b03a2e; --red-l:#fbe3e0; --ink:#1d2330; --muted:#5a6270; --line:#c9d2de;
+}
+@page{ size:A4; margin:16mm 15mm 16mm 15mm; }
+@page :first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{ font-family:Inter, "DejaVu Sans", sans-serif; font-size:10.3pt; line-height:1.5; color:var(--ink); margin:0; }
+h1,h2,h3,.serif{ font-family:Lora, Georgia, serif; color:var(--navy); }
+h1{ font-size:24pt; margin:0 0 4pt; line-height:1.15; }
+h2{ font-size:15pt; margin:16pt 0 6pt; padding-bottom:3pt; border-bottom:2px solid var(--sand2); break-after:avoid; }
+h3{ font-size:12pt; margin:12pt 0 4pt; break-after:avoid; }
+p{ margin:4pt 0 7pt; }
+a{ color:var(--navy2); }
+code, pre{ font-family:"DejaVu Sans Mono", monospace; }
+code{ font-size:8.8pt; background:#eef1f5; padding:0 3px; border-radius:3px; }
+pre{ font-size:8.6pt; background:#f4f6f9; border:1px solid #dde2ea; border-radius:6px; padding:7pt 9pt; white-space:pre-wrap; break-inside:avoid; margin:6pt 0; }
+pre code{ background:none; padding:0; }
+table{ border-collapse:collapse; width:100%; margin:6pt 0 9pt; font-size:9.3pt; }
+th,td{ border:1px solid var(--line); padding:3.5pt 6pt; text-align:left; vertical-align:top; }
+th{ background:#e8eef7; color:var(--navy); }
+tr{ break-inside:avoid; }
+img{ max-width:100%; }
+figure{ margin:8pt 0; break-inside:avoid; text-align:center; }
+figcaption{ font-size:8.8pt; color:var(--muted); font-style:italic; margin-top:3pt; text-align:left; }
+.page-break{ break-before:page; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.center{ text-align:center; }
+
+/* ---------- cover ---------- */
+.cover{ height:297mm; width:210mm; box-sizing:border-box; padding:22mm 18mm; background:linear-gradient(170deg,#1f3a5f 0%,#2c5282 55%,#b07a1e 100%); color:#fff; position:relative; break-after:page; }
+.cover h1{ color:#fff; font-size:38pt; margin-top:18mm; }
+.cover .tag{ font-family:Lora,serif; font-size:16pt; color:#fff4d6; font-style:italic; }
+.cover .sub{ font-size:13pt; margin-top:6mm; max-width:150mm; }
+.cover .meta{ position:absolute; bottom:22mm; left:18mm; right:18mm; font-size:10pt; border-top:1px solid rgba(255,255,255,.5); padding-top:5mm; }
+.cover .logo{ width:30mm; border-radius:50%; border:3px solid #fff4d6; }
+.cover .cast{ display:flex; gap:10mm; margin-top:14mm; align-items:flex-end; }
+.cover .cast div{ text-align:center; font-size:10pt; }
+.cover .cast svg{ background:rgba(255,255,255,.92); border-radius:18px; padding:6px; }
+
+/* ---------- stop opener ---------- */
+.stop-head{ break-before:page; background:var(--sand); border-radius:14px; padding:12pt 14pt; margin-bottom:10pt; position:relative; border-left:10px solid var(--navy); }
+.stop-head .kicker{ font-family:Inter,sans-serif; font-size:9pt; letter-spacing:.12em; text-transform:uppercase; color:var(--amber); font-weight:700; }
+.stop-head h1{ margin:2pt 0 2pt; }
+.stop-head .q{ font-family:Lora,serif; font-size:12.5pt; font-style:italic; color:#4a3a1a; }
+.stop-head .meta{ font-size:9pt; color:var(--muted); margin-top:4pt; }
+.stop-head svg.mascot{ position:absolute; right:14pt; top:10pt; width:62px; height:68px; }
+
+/* ---------- speech ---------- */
+.say{ display:flex; gap:8pt; align-items:flex-start; margin:6pt 0; break-inside:avoid; }
+.say svg{ flex:0 0 40px; width:40px; height:44px; }
+.say .bubble{ background:#fff; border:1.5px solid var(--line); border-radius:10px; padding:5pt 9pt; position:relative; }
+.say .who{ font-weight:700; font-size:8.6pt; text-transform:uppercase; letter-spacing:.06em; display:block; }
+.say.bek .bubble{ border-color:#9fb3cf; background:#f2f6fb; } .say.bek .who{ color:var(--navy2); }
+.say.toti .bubble{ border-color:#a6d3a8; background:#f2faf2; } .say.toti .who{ color:var(--green); }
+.say.nodira .bubble{ border-color:#e3c48a; background:#fffaf0; } .say.nodira .who{ color:var(--amber); }
+
+/* ---------- boxes ---------- */
+.box{ border-radius:10px; padding:8pt 11pt 6pt; margin:9pt 0; break-inside:avoid; border:1.5px solid var(--line); }
+.box > .label{ display:inline-block; font-weight:800; font-size:8.6pt; letter-spacing:.08em; text-transform:uppercase; padding:2pt 8pt; border-radius:20px; margin-bottom:4pt; color:#fff; }
+.box.allow-break{ break-inside:auto; }
+.tale{ background:var(--sand); border-color:#e3c48a; } .tale > .label{ background:var(--amber); }
+.real{ background:#fff; border:2px solid var(--navy); } .real > .label{ background:var(--navy); }
+.predict{ background:#f3eefc; border-color:#c7b5ec; } .predict > .label{ background:#6a4bb0; }
+.watch{ background:#eef7fb; border-color:#9ccde3; } .watch > .label{ background:#1f7a99; }
+.trap{ background:var(--red-l); border-color:#e6a69d; } .trap > .label{ background:var(--red); }
+.check{ background:var(--green-l); border-color:#9fcfa2; } .check > .label{ background:var(--green); }
+.feedback{ background:#fafafa; border:1.5px dashed #9aa5b5; } .feedback > .label{ background:#55606f; }
+.postcard{ background:linear-gradient(135deg,#fff4d6,#f6ecd7); border:2px solid var(--amber); } .postcard > .label{ background:var(--amber); }
+.lab{ background:#f4f6f9; border:2px solid #6b7c93; } .lab > .label{ background:#3d4b5f; }
+
+/* mission card: Goal / Preparation / Task / Observation / Reflection / Feedback */
+.mission{ border:2px solid var(--green); border-radius:12px; margin:10pt 0; break-inside:auto; overflow:hidden; }
+.mission .mhead{ background:var(--green); color:#fff; padding:5pt 11pt; font-weight:700; break-after:avoid; }
+.mission .mhead .num{ background:#fff; color:var(--green); border-radius:12px; padding:0 7px; margin-right:6px; font-size:9pt; }
+.mission .mhead .time{ float:right; font-weight:400; font-size:9pt; opacity:.95; }
+.mission .row{ display:grid; grid-template-columns:24mm 1fr; border-top:1px solid #d6e6d7; break-inside:avoid; }
+.mission .row > .k{ background:var(--green-l); padding:5pt 7pt; font-weight:700; font-size:8.8pt; color:var(--green); text-transform:uppercase; letter-spacing:.04em; }
+.mission .row > .v{ padding:5pt 9pt; }
+.mission .row > .v > p:first-child{ margin-top:0; } .mission .row > .v > :last-child{ margin-bottom:0; }
+.mission .row.fb > .k{ background:#eceff3; color:#55606f; }
+
+/* answer key styling */
+.ans{ color:#24543a; }
+.toc{ columns:2; column-gap:10mm; font-size:10pt; }
+.toc div{ break-inside:avoid; margin-bottom:3pt; display:flex; justify-content:space-between; gap:6pt; }
+.toc .pg{ flex:0 0 auto; color:var(--muted); }
+.toc .lvl1{ font-weight:700; color:var(--navy); margin-top:5pt; }
+.toc .lvl2{ padding-left:10pt; }
+.legend{ display:grid; grid-template-columns:repeat(2,1fr); gap:5pt 10pt; }
+.legend .box{ margin:0; padding:5pt 8pt; font-size:9pt; }
+.cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:6pt; }
+.card{ border:2px dashed #8a97a8; border-radius:8px; padding:7pt; min-height:30mm; font-size:10pt; break-inside:avoid; background:#fff; }
+.card .ct{ font-weight:800; color:var(--navy); font-size:11pt; }
+.card.rule{ border-color:var(--green); } .card.fact{ border-color:var(--navy2); background:#f2f6fb; } .card.event{ border-color:var(--amber); background:#fffaf0; }
+.tick{ font-family:"DejaVu Sans"; }
+.two{ display:grid; grid-template-columns:1fr 1fr; gap:10pt; }
+.fig-pair{ display:grid; grid-template-columns:1fr 1fr; gap:8pt; }
+.blank{ border-bottom:1px solid #9aa5b5; display:inline-block; min-width:40mm; }
+.writein{ border:1px solid #c9d2de; border-radius:6px; min-height:16mm; margin:4pt 0 8pt; background:#fff; }

@@ -35,6 +35,37 @@ For each entry, we record what the AI was asked to do, what it produced, what we
 
 ---
 
+## Entry A-03: Stage 2 / V2.0 drafting (3 November 2026)
+
+| Field | Entry |
+|---|---|
+| Tool | Claude (Anthropic), configured model `claude-opus-5-5`, used through claude.ai |
+| Used by | Khaydarov Sarvarbek (@skh0035) |
+| Prompt (summary) | "Finish our GitHub as it needs to be in Stage 2", together with the Stage 2 brief. |
+| What the AI produced | Expanded Topics 1–5 (misconceptions, find-the-error and predict activities, new worked examples for Topics 3 and 5); `examples/topic03_learn_a_rule.py`; Topic 4 timeline graphic; `content/06-test-bank.md`; `content/glossary.md`; `docs/resource-mapping.md`, `docs/revision-summary.md`, Stage 2 `docs/review-log.md`; updated outline, README and plan; README auto-structure workflow (adapted from Sarvarbek's script on the `skh0035_edit` branch). |
+| Sources the AI consulted | Lighthill report (AIAI Edinburgh copy); IPSJ Computer Museum; *Nature* 356 (1992); McDermott (1981, 1982); Middlesex University XCON notes; MDN Web Docs; University of Liverpool game-design lecture; plus the V1.1 sources. All are listed in the topic References sections. |
+| What the AI verified itself | Ran both example programs for every tracing answer (Topic 2 Parts A/E/F, Topic 3 §3 and Activity A, test bank Q7–Q10/Q13); this caught one wrong answer (Topic 3 Activity A). Compared history claims against a second source; this corrected the Fifth Generation dates. Checked all local links and viewed every figure. Full list: `docs/review-log.md` §4. |
+| Decisions and limits | The AI did **not** record any peer review or learner test, because these must be done by team members. Review assignments and owners are *proposals*. |
+| **What the team must still do** | Each author of record reads, edits and commits their topic under their own account; reviewers complete `review-log.md` §5–6; each member records their own verification and learning in their personal log. |
+| Kept / changed | *(team to fill in after review)* |
+
+---
+
+## Entry A-04: Study Guide & Test Bank V1.0 (3 November 2026)
+
+| Field | Entry |
+|---|---|
+| Tool | Claude (Anthropic), configured model `claude-opus-5-5`, used through claude.ai, with the Claude desktop app's built-in browser on Sarvarbek's computer |
+| Used by | Khaydarov Sarvarbek (@skh0035) |
+| Prompt (summary) | "Make it" for the Study Guide and Test Bank V1.0 brief. |
+| What the AI produced | Study Guide "The SilkMind Caravan" (theme, characters BEK / To'ti / Nodira, route map, 5 stops, 14 missions, 4 labs, challenge, glossary, printable cards, testing record); Test Bank (24 T/F, 24 MC, 8 open-ended, answer key); Prolog lab files; notebook `SilkMind_Labs.ipynb`; build scripts in `study-guide/src/`. |
+| What the AI tested | Ran Lab 2A, Lab 5 and the challenge example in SWISH and Lab 2B in ELIZA (masswerk.at) through the built-in browser; screenshots in `study-guide/img/`. Testing found and fixed a confusing "discontiguous" warning in the starter file. Ran every Python/notebook cell. Checked video IDs, titles, lengths and chapter times via video listings (Rosetta, PBS). |
+| Not tested / limits | Machine Learning for Kids: stopped at the Cloudflare "Verify you are human" box (the AI does not complete such checks), so a member must test Lab 3. Video content was not watched by the AI; members must watch the recommended parts. YouTube and Google Sites could not be opened in the browser. |
+| **What the team must still do** | Test Lab 3; watch the videos; complete the learner tests and the test-bank review record (guide Appendix B; Test Bank review table); fill in the contributions table; each member records their own checks in their personal log. |
+| Kept / changed | *(team to fill in)* |
+
+---
+
 ## Entry template
 
 | Field | Entry |
